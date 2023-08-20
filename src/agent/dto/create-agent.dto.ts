@@ -1,17 +1,17 @@
 export class CreateAgentDto {
-  tagRegion: string;
-  travelAgent: string;
-  contactPerson: string;
-  email: string;
-  phoneNumber: string;
-  show: string;
-  website: string;
-  link: string;
-  publishedResort: string;
-  salesBySafari: string;
-  safariProduct: string;
-  sales2022: string;
-  sales2023: string;
-  notes: string;
-  followUp: string;
+  tagRegion: any;
+  travelAgent: any;
+  contactPerson: any;
+  email: any;
+  phoneNumber: any;
+  show: any;
+  website: any;
+  link: any;
+  publishedResort: any;
+  salesBySafari: any;
+  safariProduct: any;
+  sales2022: any;
+  sales2023: any;
+  notes: any;
+  followUp: any;
 }
