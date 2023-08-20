@@ -10,17 +10,17 @@ export class Agent {
   @Prop({ required: true })
   travelAgent: string;
   @Prop()
-  contactPerson: string;
+  contactPerson: any[];
   @Prop()
-  email: string;
+  email: any[];
   @Prop()
-  phoneNumber: string;
+  phoneNumber: any[];
   @Prop()
-  show: string;
+  show: any[];
   @Prop()
-  website: string;
+  website: any[];
   @Prop()
-  link: string;
+  link: any[];
   @Prop()
   publishedResort: string;
   @Prop()
