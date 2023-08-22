@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { AgentService } from './agent.service';
 import { CreateAgentDto } from './dto/create-agent.dto';
@@ -21,8 +22,8 @@ export class AgentController {
   }
 
   @Get()
-  findAll() {
-    return this.agentService.findAll();
+  findAll(@Query('page') page: any) {
+    return this.agentService.findAll(page, 10);
   }
 
   @Get(':id')
