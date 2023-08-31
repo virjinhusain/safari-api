@@ -22,8 +22,8 @@ export class AgentController {
   }
 
   @Get()
-  findAll(@Query('page') page: any) {
-    return this.agentService.findAll(page, 10);
+  findAll() {
+    return this.agentService.findAll();
   }
 
   @Get(':id')

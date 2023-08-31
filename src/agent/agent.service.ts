@@ -16,16 +16,8 @@ export class AgentService {
     return createdAgent.save();
   }
 
-  async findAll(page = 1, perPage = 10) {
-    const skip = (page - 1) * perPage;
-
-    const agents = await this.agentModel
-      .find()
-      .skip(skip)
-      .limit(perPage)
-      .exec();
-
-    return agents;
+  async findAll() {
+    return await this.agentModel.find().exec();
   }
 
   async findOne(id: string) {
