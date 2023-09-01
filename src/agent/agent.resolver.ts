@@ -1,6 +1,7 @@
 import { Resolver, Query, Args } from '@nestjs/graphql';
 import { Field, ObjectType } from '@nestjs/graphql';
 import { AgentService } from './agent.service';
+import { filter } from 'rxjs';
 
 @ObjectType('Agent')
 class Agent {
@@ -36,9 +37,28 @@ class Agent {
   followUp: string;
 }
 
-@Resolver((of) => Agent)
+@Resolver((of: any) => Agent)
 export class AgentResolver {
   constructor(private agentService: AgentService) {}
+  @Query((returns) => [Agent])
+  async Agents(
+    @Args('show', { type: () => [String], nullable: true }) show: string[],
+  ) {
+    const data = await this.agentService.findAll();
+
+    if (!show || show.length === 0) {
+      return data;
+    }
+    const filteredData = data.filter((agent) => {
+      return agent.show.some((agentShow) => {
+        return show.some((filterShow: string) => {
+          return agentShow.toLowerCase().includes(filterShow.toLowerCase());
+        });
+      });
+    });
+
+    return filteredData.map((item) => item.toObject());
+  }
   @Query((returns) => [Agent])
   async getAgents() {
     return await this.agentService.findAll();
