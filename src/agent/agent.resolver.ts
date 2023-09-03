@@ -46,7 +46,7 @@ export class AgentResolver {
   ) {
     const data = await this.agentService.findAll();
 
-    if (!show || show.length === 0) {
+    if (!show || (show.length === 1 && show[0] === '')) {
       return data;
     }
     const filteredData = data.filter((agent) => {
