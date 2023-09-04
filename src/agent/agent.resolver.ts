@@ -35,6 +35,8 @@ class Agent {
   notes: string;
   @Field()
   followUp: string;
+  @Field()
+  _id: string;
 }
 
 @Resolver((of: any) => Agent)
@@ -57,7 +59,12 @@ export class AgentResolver {
       });
     });
 
-    return filteredData.map((item) => item.toObject());
+    return filteredData.map((item) => {
+      return {
+        _id: item._id,
+        ...item.toObject(),
+      };
+    });
   }
   @Query((returns) => [Agent])
   async getAgents() {
