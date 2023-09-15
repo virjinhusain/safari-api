@@ -1,7 +1,6 @@
 import { Resolver, Query, Args } from '@nestjs/graphql';
 import { Field, ObjectType } from '@nestjs/graphql';
 import { AgentService } from './agent.service';
-import { filter } from 'rxjs';
 
 @ObjectType('Agent')
 class Agent {
@@ -35,8 +34,8 @@ class Agent {
   notes: string;
   @Field()
   followUp: string;
-  @Field()
-  ActionShowResult: string;
+  @Field({ nullable: true })
+  actionShowResults: string;
   @Field()
   _id: string;
 }
