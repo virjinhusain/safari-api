@@ -14,5 +14,5 @@ export class CreateAgentDto {
   sales2023: any;
   notes: any;
   followUp: any;
-  ActionShowResult: any;
+  actionShowResult: any;
 }

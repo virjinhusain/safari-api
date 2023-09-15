@@ -36,7 +36,7 @@ export class Agent {
   @Prop()
   followUp: string;
   @Prop()
-  ActionShowResult: string;
+  actionShowResult: string;
 }
 
 export const AgentSchema = SchemaFactory.createForClass(Agent);
