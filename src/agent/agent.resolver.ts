@@ -36,6 +36,8 @@ class Agent {
   @Field()
   followUp: string;
   @Field()
+  ActionShowResult: string;
+  @Field()
   _id: string;
 }
 
