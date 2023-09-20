@@ -5,6 +5,10 @@ import { AgentService } from './agent.service';
 @ObjectType('Agent')
 class Agent {
   @Field()
+  createdAt: string;
+  @Field()
+  updatedAt: string;
+  @Field()
   tagRegion: string;
   @Field()
   travelAgent: string;
