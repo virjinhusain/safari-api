@@ -35,6 +35,10 @@ class Agent {
   @Field()
   sales2023: string;
   @Field()
+  sales2025: string;
+  @Field()
+  sales2026: string;
+  @Field()
   notes: string;
   @Field()
   followUp: string;
